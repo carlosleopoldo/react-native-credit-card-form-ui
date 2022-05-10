@@ -18,13 +18,12 @@ const CardInput: any = ({
   style,
   ...props
 }: CardInputProps) => {
-  // const handleChange = React.useCallback(
-  //   (text) => {
-  //     const value = text.toUpperCase();
-  //     return onChange(name, value);
-  //   },
-  //   [name, onChange]
-  // );
+  const handleChange = React.useCallback(
+    (text:string) => {
+      return onChange(name, text);
+    },
+    [name, onChange]
+  );
 
   const setRef = (inputRef: any, ref: any) => {
     if (typeof ref === 'object') {
@@ -40,7 +39,7 @@ const CardInput: any = ({
   return (
     <InputComponent
       style={style}
-      // onChangeText={handleChange}
+      onChangeText={handleChange}
       hitSlop={{ top: 10, bottom: 10, left: 0, right: 0 }}
       {...maskProps}
       {...props}
