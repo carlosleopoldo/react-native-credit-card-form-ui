@@ -41,6 +41,7 @@ const CardInput: any = ({
       style={style}
       onChangeText={handleChange}
       hitSlop={{ top: 10, bottom: 10, left: 0, right: 0 }}
+      autoCapitalize="characters"
       {...maskProps}
       {...props}
       {...customProps}
